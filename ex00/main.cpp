@@ -1,6 +1,4 @@
 #include "BitcoinExchange.hpp"
-#include <fstream>
-#include <sstream>
 
 int	main(int argc, char **argv)
 {

@@ -42,15 +42,16 @@ BitcoinExchange::BitcoinExchange(char *file)
 {
 	std::ifstream datacsv;
 	datacsv.open("./data.csv", std::ios::in);
+
 	std::ifstream inputcsv;
 	inputcsv.open(file, std::ios::in);
+
 	if (!inputcsv.is_open())
 	{
 		std::cerr << "Error: '" << file << "' file not found" << std::endl;
 		exit(1);
 	}
 
-	std::map<std::string, double>	data;
 	std::string	line;
 	std::string	date;
 	double		price;

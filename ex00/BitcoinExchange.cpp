@@ -3,12 +3,12 @@
 
 BitcoinExchange::BitcoinExchange()
 {
-	std::cout << "lolol" << std::endl;
+	std::cout << "~~~~~ BC Constructer ~~~~~" << std::endl;
 }
 
 BitcoinExchange::~BitcoinExchange()
 {
-
+	std::cout << "~~~~~ BC Destructer ~~~~~" << std::endl;
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange& ref)

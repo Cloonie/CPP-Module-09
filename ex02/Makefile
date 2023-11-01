@@ -10,6 +10,7 @@ CPPFLAGS	+=	-std=c++98
 RM			=	rm -rf
 
 SRCS		=	main.cpp	\
+				PmergeMe.cpp
 
 OBJS		=	$(patsubst %.cpp, %.o, $(SRCS))
 

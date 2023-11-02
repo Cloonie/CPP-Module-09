@@ -1,11 +1,14 @@
 #pragma once
 
-#include <iostream>
-#include <string>
-#include <cstdlib>
+// Normal Libraries
+#include <iostream>		// std::cout
+#include <iomanip>		// std::setw
+#include <ctime>		// clock()
 
-#include <vector>
-#include <list>
+// STL Libraries
+#include <algorithm>	// std::merge & atoi
+#include <vector>		// std::vector
+#include <list>			//std::list
 
 class PmergeMe
 {
@@ -14,9 +17,4 @@ class PmergeMe
 		~PmergeMe();
 		PmergeMe(const PmergeMe& ref);
 		PmergeMe& operator=(const PmergeMe& ref);
-
-		// void PmergeMe::sort(char **argv);
-
-	private:
-
 };

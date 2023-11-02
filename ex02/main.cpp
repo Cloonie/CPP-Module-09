@@ -63,7 +63,7 @@ int	main(int argc, char **argv)
 			return 1;
 		}
 	}
-	std::list<int> lst(vec.begin(), vec.end());
+	std::deque<int> dq(vec.begin(), vec.end());
 
 	// output set of numbers in containers before and after sorting
 	std::cout << "\033[1;31m" << "Before: ";
@@ -82,22 +82,21 @@ int	main(int argc, char **argv)
 	clock_t end1 = clock();
 	double time1 = static_cast<double>(end1 - start1) / CLOCKS_PER_SEC * 1000;
 
-	clock_t start2 = clock();
-	mergeInsertionSort(vec);
-	clock_t end2 = clock();
-	double time2 = static_cast<double>(end2 - start2) / CLOCKS_PER_SEC * 1000;
-
 	std::cout << "Time to process a range of " << std::setw(3)
 		<< vec.size() << " elements with std::vector : " << time1 << " us"
 		<< std::endl;
 
+	clock_t start2 = clock();
+	mergeInsertionSort(dq);
+	clock_t end2 = clock();
+	double time2 = static_cast<double>(end2 - start2) / CLOCKS_PER_SEC * 1000;
+
 	std::cout << "Time to process a range of " << std::setw(3)
-		<< lst.size() << " elements with std::list   : " << time2 << " us"
+		<< dq.size() << " elements with std::deque  : " << time2 << " us"
 		<< std::endl;
 
 	std::cout << "\033[0m";
 }
-
 
 	// std::cout << "vec it -> ";
 	// for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)

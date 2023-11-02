@@ -8,7 +8,7 @@
 // STL Libraries
 #include <algorithm>	// std::merge & atoi
 #include <vector>		// std::vector
-#include <list>			//std::list
+#include <deque>		// std::deque
 
 class PmergeMe
 {

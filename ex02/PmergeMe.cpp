@@ -40,8 +40,8 @@ void	PmergeMe::pmergeme(char **argv)
 	double time1 = static_cast<double>(end1 - start1) / CLOCKS_PER_SEC * 1000;
 
 	std::cout << "Time to process a range of " << std::setw(3)
-		<< vec.size() << " elements with std::vector : " << time1 << " us"
-		<< std::endl;
+		<< vec.size() << " elements with std::vector : "
+		<< std::fixed << std::setprecision(5) << time1 << " us" << std::endl;
 
 	clock_t start2 = clock();
 	mergeInsertionSort(dq);
@@ -49,8 +49,8 @@ void	PmergeMe::pmergeme(char **argv)
 	double time2 = static_cast<double>(end2 - start2) / CLOCKS_PER_SEC * 1000;
 
 	std::cout << "Time to process a range of " << std::setw(3)
-		<< dq.size() << " elements with std::deque  : " << time2 << " us"
-		<< std::endl;
+		<< dq.size() << " elements with std::deque  : "
+		<< std::fixed << std::setprecision(5) << time2 << " us" << std::endl;
 
 	std::cout << "\033[0m";
 }

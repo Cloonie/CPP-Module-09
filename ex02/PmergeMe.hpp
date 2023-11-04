@@ -35,6 +35,7 @@ class PmergeMe
 			if (con.size() <= 5)
 			{
 				// insertion sort for small set of numbers
+				// my insertion sort uses operator[] which randomly can access memory
 				for (size_t i = 1; i < con.size(); ++i)
 				{
 					int tmp = con[i];

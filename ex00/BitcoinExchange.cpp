@@ -21,6 +21,10 @@ bool checkDateFormat(std::string& str) {
 		if (!std::isdigit(str[i]))
 			return false;
 	}
+	if (str[5] >= '1' && str[6] > '2')
+		return false;
+	if (str[8] >= '3' && str[9] > '1')
+		return false;
 	return true;
 }
 
@@ -82,12 +86,12 @@ BitcoinExchange::BitcoinExchange(char *file)
 		{
 			removeWhitespaces(date);
 			if (checkDateFormat(date) == false)
+				std::cout << "Error: bad input => " << date << std::endl;
+			else
 			{
-				std::cerr << "Error: '" << date << "' wrong format" << std::endl;
-				exit(1);
+				std::cout << date << " => " << price << " = "
+				<< (price * getBitcoinPrice(date, data)) << std::endl;
 			}
-			std::cout << date << " => " << price << " = "
-			<< (price * getBitcoinPrice(date, data)) << std::endl;
 		}
 		else
 		{
@@ -99,7 +103,6 @@ BitcoinExchange::BitcoinExchange(char *file)
 				std::cout << "Error: too large a number." << std::endl;
 			else
 				std::cout << "Error: bad input => " << date << std::endl;
-
 		}
 	}
 }

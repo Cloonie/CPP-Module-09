@@ -1,15 +1,19 @@
 #include "BitcoinExchange.hpp"
 
-void removeWhitespaces(std::string& str) {
-	for (std::string::iterator it = str.begin(); it != str.end(); ++it) {
-		if (std::isspace(*it)) {
+void removeWhitespaces(std::string& str)
+{
+	for (std::string::iterator it = str.begin(); it != str.end(); ++it)
+	{
+		if (std::isspace(*it))
+		{
 			it = str.erase(it);
 			--it;
 		}
 	}
 }
 
-bool checkDateFormat(std::string& str) {
+bool checkDateFormat(std::string& str)
+{
 	if (str.length() != 10)
 		return false;
 	if (str[4] != '-' || str[7] != '-')
@@ -30,11 +34,13 @@ bool checkDateFormat(std::string& str) {
 
 double getBitcoinPrice(const std::string& date, std::map<std::string, double> data) {
 	std::map<std::string, double>::iterator it = data.find(date);
-	if (it != data.end()) {
+	if (it != data.end())
 		return it->second;
-	} else {
+	else
+	{
 		it = data.lower_bound(date);
-		if (it != data.begin()) {
+		if (it != data.begin())
+		{
 			--it;
 			return it->second;
 		}

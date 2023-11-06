@@ -1,0 +1,37 @@
+~~~~~ std::map ~~~~~
+A sorted associative container that contains key-value pairs with unique keys.
+Keys are sorted by using the comparison function Compare. Search, removal,
+and insertion operations have logarithmic complexity.
+Maps are usually implemented as Red–black trees.
+A red–black tree is a specialised binary search tree data structure noted for
+fast storage and retrieval of ordered information, and a guarantee that
+operations will complete within a known time.
+
+
+~~~~~ std::stack ~~~~~
+A container adaptor that gives the programmer the functionality of a stack
+- specifically, a LIFO (last-in, first-out) data structure.
+The class template acts as a wrapper to the underlying container
+- only a specific set of functions is provided.
+The stack pushes and pops the element from the back of the underlying container,
+known as the top of the stack.
+
+
+~~~~~ std::vector ~~~~~
+~~~~~ std::deque ~~~~~
+
+Both allows for random memory access, example[42].
+
+std::vector is a dynamic array that stores elements in a contiguous block of memory.
+Accessing elements in a std::vector is fast because elements are adjacent in memory.
+
+std::deque (short for double-ended queue) is implemented as a sequence of individually
+allocated fixed-size arrays, allowing for efficient insertion and deletion at both ends.
+However, accessing elements in the middle of a std::deque can be slower compared to
+std::vector due to the need to traverse multiple blocks of memory.
+
+Insertion sort is efficient for small sequences, which is why the merge-insertion
+sort algorithm you mentioned switches to insertion sort for small sub-sequences.
+If you're using std::vector and std::deque with the same sequence of data, the
+insertion sort part may be faster with std::vector due to better cache locality
+and memory access patterns.
